@@ -6,10 +6,10 @@
     "dev:sass": "node-sass source/scss/style.scss --watch --output=compiled/css --output-style=compressed --source-map=true",
     "dev": "run-p dev:*",
     "build:html": "htmlhint index.html",
-    "build:style": "npx stylelint '**/*.scss'",
+    "build:style": "npx stylelint source/scss/*.scss",
     "build:js": "standard",
     "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
-    "build": "run-p build:*",
+    "build": "run-s build:*",
     "deploy:surge": "surge --project . --domain https://lazzaror-js-package-json-intro.surge.sh/",
     "deploy": "run-s build:* deploy:surge"
   },
